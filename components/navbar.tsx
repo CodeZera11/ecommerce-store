@@ -10,7 +10,7 @@ const Navbar = async () => {
     const categories = await getCategories();
 
     return (
-        <div className='px-4 py-4 md:px-6 lg:px-8 flex gap-10 items-center bg-white/30 border-black border-b'>
+        <div className='px-4 py-4 md:px-6 lg:px-8 flex gap-10 items-center bg-[#1F1F20] text-white border-black border-b'>
             <div className='text-lg md:text-xl lg:text-2xl font-bold'>
                 <Link href={"/"}>STORE</Link>
             </div>

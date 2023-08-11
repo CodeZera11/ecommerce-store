@@ -10,8 +10,8 @@ interface ProductsProps {
 
 const Products: React.FC<ProductsProps> = ({ title, products }) => {
     return (
-        <div className='space-y-10 p-4'>
-            <div className='font-bold text-4xl'>
+        <div className='space-y-10 px-4 py-10 sm:px-6 lg:px-8'>
+            <div className='font-bold text-4xl text-yellow-400'>
                 {title}
             </div>
             {products.length === 0 && <NoResults />}

@@ -1,21 +1,31 @@
+"use client"
+
 import { Product } from '@/types'
 import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import Image from 'next/image';
 import { Expand, ShoppingCart, Store } from '../node_modules/lucide-react';
 import { formatter } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
     product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push(`/product/${product?.id}`)
+    }
+
     return (
-        <>
-            <Card className='rounded-xl bg-white/40 cursor-pointer overflow-hidden'>
-                <div className='group relative w-full overflow-hidden'>
+        <div className=' border border-gray-400 rounded-xl'>
+            <Card className='rounded-xl border-none bg-black cursor-pointer overflow-hidden group' onClick={handleClick}>
+                <div className='relative w-full overflow-hidden'>
                     <Image
-                        className='rounded-xl aspect-square object-cover group-hover:scale-110 transition duration-500 hover:opacity-40'
+                        className='aspect-square object-cover group-hover:scale-110 transition duration-500'
                         src={product.images[0].url}
                         alt='image'
                         objectFit='objectFit'
@@ -32,18 +42,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     </div>
                 </div>
                 {/* Description */}
-                <div className='p-2'>
-                    <div className='mt-2 w-full text-start capitalize text-lg'>
-                        <p className="font-semibold text-lg">{product.name}</p>
-                        <p className="text-sm text-muted-foreground">{product.category?.name}</p>
+                <div className='p-2 text-white'>
+                    <div className='mt-2 w-full text-start capitalize text-lg space-y-0'>
+                        <p className="font-bold text-lg">{product.name}</p>
+                        <p className="text-sm text-yellow-100 ">{product.category?.name}</p>
                     </div>
                     {/* Price & Reiew */}
-                    <div className="w-full text-start">
-                        <div>{formatter.format(Number(product.price))}</div>
+                    <div className="w-full text-start mt-4">
+                        <div className='text-muted-foreground'>{formatter.format(Number(product.price))}</div>
                     </div>
                 </div>
             </Card >
-        </>
+        </div>
     )
 }
 

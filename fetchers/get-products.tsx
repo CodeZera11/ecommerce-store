@@ -23,5 +23,5 @@ export const getProducts = async (query: QueryProps): Promise<Product[]> => {
     })
 
     const response = await fetch(url);
-    return response.json()
+    return response.json();
 }

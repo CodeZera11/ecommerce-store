@@ -23,7 +23,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
     return (
         <div className="gap-5 flex">
             {routes.map((route: any) => (
-                <Link key={route.label} href={route.href} className={cn("font-medium text-md transition-colors hover:text-black cool-link", route.active ? "text-black" : "text-muted-foreground")}>
+                <Link key={route.label} href={route.href} className={cn("font-medium text-md transition-colors cool-link", route.active ? "text-black" : "text-muted-foreground")}>
                     {route.label}
                 </Link>
             ))}
