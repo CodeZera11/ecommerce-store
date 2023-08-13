@@ -28,7 +28,7 @@ const GalleryTab: React.FC<GalleryTabProps> = ({
                     <span
                         className={cn(
                             'absolute inset-0 rounded-xl ring-4 ring-offset-2',
-                            selected ? 'ring-black' : 'ring-yellow-300',
+                            selected ? 'ring-yellow-300' : ' ring-black',
                         )}
                     />
                 </div>

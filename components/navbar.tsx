@@ -1,7 +1,7 @@
 import React from 'react'
 import MainNav from './main-nav'
 import Link from 'next/link'
-import { getCategories } from '@/fetchers/get-categories'
+import getCategories from '@/fetchers/get-categories'
 import { Button } from './ui/button'
 import { ShoppingBag } from '../node_modules/lucide-react'
 

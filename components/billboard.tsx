@@ -22,15 +22,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
                 <AspectRatio ratio={16 / 9}>
                     <div className="text-white font-bold text-2xl sm:text-3xl lg:text-5xl sm:max-w-xl mx-auto h-full flex items-center justify-center w-full">
                         <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#b2ff23] via-[#497BF8] to-[#CE14FF] mt-9 ">
-                            <TypewriterComponent
-                                options={{
-                                    strings: [
-                                        `${data.label}`
-                                    ],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
-                            />
+                            {data.label}
                         </div>
 
                     </div>

@@ -2,7 +2,7 @@ import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 import Products from "@/components/products";
 import getProduct from "@/fetchers/get-product";
-import { getProducts } from "@/fetchers/get-products";
+import getProducts from "@/fetchers/get-products";
 
 export const revalidate = 0;
 
@@ -33,7 +33,6 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
             </div>
             <hr className="my-10" />
             <Products title="Related Items" products={suggestedProducts} />
-
         </div>
     )
 }

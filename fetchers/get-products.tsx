@@ -10,7 +10,7 @@ interface QueryProps {
 
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`
 
-export const getProducts = async (query: QueryProps): Promise<Product[]> => {
+const getProducts = async (query: QueryProps): Promise<Product[]> => {
 
     const url = qs.stringifyUrl({
         url: URL,
@@ -25,3 +25,5 @@ export const getProducts = async (query: QueryProps): Promise<Product[]> => {
     const response = await fetch(url);
     return response.json();
 }
+
+export default getProducts;
